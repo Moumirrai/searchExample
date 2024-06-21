@@ -1,0 +1,28 @@
+{{ define "title" }}Google JSON{{ end }}
+
+
+{{ define "meta" }}
+<meta name="keywords" content="search, json, golang, htmx">
+<meta name="description" content="Welcome to google search example!">
+{{ end }}
+
+{{ define "styles" }}{{ end }}
+
+{{ define "scripts" }}{{ end }}
+
+{{ define "content" }}
+<div id="app">
+    <h2 class="text-lg">
+        Search Google
+        <br />
+        <span class="htmx-indicator my-2 text-sm">
+            Searching...
+        </span>
+    </h2>
+    <input
+        class="search-input-field focus:border-yellow-400 border-2 border-gray-500 outline-none focus:outline-none focus:ring-0 mt-1"
+        type="search" name="search" placeholder="Begin Typing To Search..." hx-post="/api/search"
+        hx-trigger="input changed delay:500ms, search" hx-target="#search-results" hx-indicator=".htmx-indicator">
+    <div id="search-results" class="flex-auto text-center mt-5"></div>
+</div>
+{{ end }}

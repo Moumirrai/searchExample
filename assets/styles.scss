@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$accent: #ffcc00;
+
+/* User styles */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fefef5;
+  background-color: #252525;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: #000;
+  background-color: $accent;
+  border: none;
+  border-radius: 0.25em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($accent, 10%);
+  }
+
+  &:active {
+    background-color: darken($accent, 20%);
+  }
+}
+
+.search-input-field {
+  padding: 0.5em 1em;
+  border-radius: 0.7em;
+  outline: none !important;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fefef5;
+  background-color: #696969;
+  transition: border-color 0.3s ease;
+
+  &::placeholder {
+    color: #ccc; // Change this to the color you want for the placeholder text
+    opacity: 1; // Necessary to show the color in some browsers
+  }
+
+  &::-ms-clear {
+    display: none; // This hides the clear button in IE
+  }
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #fefef5;
+  background-color: #252525;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#htmx-result {
+  padding: 2rem 0;
+}
+
+.content {
+  padding: 2em;
+}
